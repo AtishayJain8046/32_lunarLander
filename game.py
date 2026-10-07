@@ -20,8 +20,15 @@ def ship_color(fuel_ratio):
 
 def on_landing(score):
     """Called after a successful landing with the points just earned; add fireworks or bonuses here."""
-    pass
-
+    print(f"\n--- TOUCHDOWN SUCCESSFUL ---")
+    
+    # High-multiplier pads (x3) will result in much higher scores (guaranteed > 300 points)
+    if score >= 300:
+        print(f"🎇 🎆 INCREDIBLE LANDING! +{score} POINTS! 🎆 🎇")
+        # Play a system beep as a distinct sound for a high-multiplier pad
+        print('\a', end='') 
+    else:
+        print(f"🌟 Solid landing! +{score} points. 🌟")
 
 def bonus_life_threshold():
     """Return a score value at which the player earns an extra life, or None to disable bonus lives."""
